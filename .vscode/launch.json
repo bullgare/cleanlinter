@@ -1,0 +1,54 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tests",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceFolder}"
+        },
+        {
+            "name": "integration-tests",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceFolder}/test"
+        },
+        {
+            "name": "check valid",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}/test/testdata/src/project_correct/",
+            "program": "${workspaceFolder}/cmd/cleanlinter/",
+            "args": [
+                "-cleanlinter_path_to_domain=github.com/bullgare/cleanlinter/test/testdata/src/project_correct/internal/domain",
+                "-cleanlinter_path_to_usecase=github.com/bullgare/cleanlinter/test/testdata/src/project_correct/internal/usecase",
+                "-cleanlinter_path_to_adapter=github.com/bullgare/cleanlinter/test/testdata/src/project_correct/internal/adapter",
+                "-cleanlinter_path_to_infra=github.com/bullgare/cleanlinter/test/testdata/src/project_correct/internal/infra",
+                // "-cleanlinter_verbose=true",
+                "./..."
+            ]
+        },
+        {
+            "name": "check invalid",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}/test/testdata/src/project_incorrect/",
+            "program": "${workspaceFolder}/cmd/cleanlinter/",
+            "args": [
+                "-cleanlinter_path_to_domain=github.com/bullgare/cleanlinter/test/testdata/src/project_incorrect/internal/domain",
+                "-cleanlinter_path_to_usecase=github.com/bullgare/cleanlinter/test/testdata/src/project_incorrect/internal/usecase",
+                "-cleanlinter_path_to_adapter=github.com/bullgare/cleanlinter/test/testdata/src/project_incorrect/internal/adapter",
+                "-cleanlinter_path_to_infra=github.com/bullgare/cleanlinter/test/testdata/src/project_incorrect/internal/infra",
+                // "-cleanlinter_verbose=true",
+                "./..."
+            ]
+        }
+    ]
+}
