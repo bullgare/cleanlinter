@@ -3,7 +3,7 @@
 Simplistic linter to check golang project internal imports according to Clean Architecture pattern.
 In other workds, checks that layers are not referencing outwards.
 
-To make it work, you can specify Clean Architecture layers' packages (at least 2 out of 4):
+To make it work, you can specify Clean Architecture layers (at least 2 out of 4):
 
 **Domain** - usually contains domain layer business rules.
 
@@ -12,6 +12,8 @@ To make it work, you can specify Clean Architecture layers' packages (at least 2
 **Adapter** - usually contains adapters to other APIs.
 
 **Infrastructure** - usually contains presentation logic (http-, grpc-handlers), DB integration, and so on.
+
+You are doing it by specifying the layer's package path.
 
 ## Installation
 
